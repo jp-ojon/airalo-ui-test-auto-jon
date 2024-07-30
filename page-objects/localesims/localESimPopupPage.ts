@@ -14,7 +14,6 @@ export class LocalESimPopupPage {
     }
 
     async getSimPackageHeaderValue() {
-        await this.page.waitForLoadState('domcontentloaded');
         await this.page.waitForLoadState('load')
         await this.simPackageTitle.waitFor({ state: 'visible', timeout: 10000 })
         return await this.simPackageTitle.innerText()
@@ -24,6 +23,7 @@ export class LocalESimPopupPage {
         const upperValue = value.toUpperCase()
         const xpathExpression = `//p[text()="${upperValue}"]/following-sibling::p`;
         this.simPackageDetail = this.simPackageHeader.locator(xpathExpression)
+        await this.page.waitForLoadState('load')
         await this.simPackageDetail.waitFor({ state: 'visible', timeout: 10000 })
         return this.simPackageDetail.innerText()
     }

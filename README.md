@@ -24,6 +24,20 @@ Jon Paulo Ojon
 ## Test Cases
 - Test Case 1: Navigate to country's first esim package and verify package details
 
+## Test Data
+- Please update the testdata.csv file under testdata folder accordingly. 
+- Test can also be used for verification of first esim package of any country name with only a single word
+
+Sample .csv test data
+country,title,coverage,data,validity,price
+Japan,Moshi Moshi,Japan,1 GB,7 days,$4.50 usd
+
+country,title,coverage,data,validity,price
+Italy,Mamma Mia,Italy,1 GB,7 days,$4.50 usd
+
+country,title,coverage,data,validity,price
+Portugal,Fofo Mobil,Portugal,1 GB,7 days,$4.50 usd
+
 ## Running Tests
 Use the following commands in any terminal or cmd line to run tests in different browsers:
 1. npm run test:chromium    : run all tests for chromium browser only
