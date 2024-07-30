@@ -1,0 +1,22 @@
+{
+  "name": "airalo-ui-test-auto-jon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
+    "test:all": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@types/node": "^22.0.0"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  }
+}
