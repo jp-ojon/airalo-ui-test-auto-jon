@@ -16,27 +16,65 @@ export class MainPage {
         this.searchInputField = this.page.locator('//input[@data-testid="search-input"]')
     }
 
+    /**
+     * This method will click the Accept Cookie Button during initial loading of main page. It will still proceed in case element does not appear
+     */
     async clickAcceptCookieButton() {
-        await this.acceptCookieButton.waitFor({ state: 'visible' })
-        await this.acceptCookieButton.click()
+        try {
+            // Wait for the element to be visible
+            await this.acceptCookieButton.waitFor({ state: 'visible'})
+            // Perform the click operation
+            await this.acceptCookieButton.click()
+        } catch (error) {
+            // Handle the error if the element does not appear or the click fails
+            console.error('Error occurred while trying to click the element:', error)
+        }
     }
 
+    /**
+     * This method will click the Push Notifications Allow Button during initial loading of main page. It will still proceed in case element does not appear
+     */
     async clickPushNotificationsAllowButton() {
-        await this.pushNotificationsAllowButton.waitFor({ state: 'visible' })
-        await this.pushNotificationsAllowButton.click()
+        try {
+            // Wait for the element to be visible
+            await this.pushNotificationsAllowButton.waitFor({ state: 'visible' })
+            // Perform the click operation
+            await this.pushNotificationsAllowButton.click()
+        } catch (error) {
+            // Handle the error if the element does not appear or the click fails
+            console.error('Error occurred while trying to click the element:', error)
+        }
     }
 
+    /**
+     * This method will click the View eSIM Store Button during initial loading of main page. It will still proceed in case element does not appear
+     */
     async clickVieweSIMStoreButton() {
-        await this.vieweSIMStoreButton.waitFor({ state: 'visible' })
-        await this.vieweSIMStoreButton.click()
+        try {
+            // Wait for the element to be visible
+            await this.vieweSIMStoreButton.waitFor({ state: 'visible' })
+            // Perform the click operation
+            await this.vieweSIMStoreButton.click()
+        } catch (error) {
+            // Handle the error if the element does not appear or the click fails
+            console.error('Error occurred while trying to click the element:', error)
+        }
     }
 
+    /**
+     * This method will fill the Search Input Field with a value
+     * @param value 
+     */
     async fillSearchInputField(value: string) {
         await this.searchInputField.fill(value)
     }
 
+    /**
+     * This mthod will click the Destination To Select based on the "value"
+     * @param value 
+     */
     async clickDestinationToSelect(value: string) {
-        const xpathExpression = `//li/span[(text()="${value}")]`;
+        const xpathExpression = `//li/span[(text()="${value}")]`
         this.destinationToSelect = this.page.locator(xpathExpression)
         await this.destinationToSelect.click()
     }

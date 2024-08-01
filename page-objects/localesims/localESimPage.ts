@@ -13,6 +13,9 @@ export class LocalESimPage {
 
     }
 
+    /**
+     * This method will click the First Package List Buy Now Button on the local ESims page of the country
+     */
     async clickFirstPackageListBuyNowButton() {
         await this.firstPackageListBuyNowButton.waitFor({ state: 'visible' })
         await this.firstPackageListBuyNowButton.click()

@@ -3,6 +3,7 @@ import {MainPage} from '../page-objects/mainPage'
 import {LocalESimPage} from './localesims/localESimPage'
 import {LocalESimPopupPage} from './localesims/localESimPopupPage'
 
+//Page Object Manager which contains all page objects.
 export class PageObjectsManager{
     page: Page
     mainPage: MainPage

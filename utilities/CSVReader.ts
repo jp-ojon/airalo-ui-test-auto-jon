@@ -11,6 +11,7 @@ interface TestData {
     price: string
 }
 
+//Read thru .csv test data file found under testdata folder.
 export async function readCSV(filePath: string): Promise<TestData[]> {
     return new Promise<TestData[]>((resolve, reject) => {
         const results: TestData[] = []
